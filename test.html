@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阜東氏號所 | CHEN'S BAKERY</title>
+  <link rel="stylesheet" href="./bootstrap-4.2.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    a{
+        color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <a  class="menu" href="" data-hover="關於阜東">ABOUT</a>
+  <a href="" data-hover="聯絡我們">Contact</a>
+
+  
+
+
+
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script>
+
+$(this).hover(function(){
+    // 偵測滑入
+    // console.log('a hover in')
+    // $(this).text('關於阜東').css('color','green')
+    console.log('text:',$(this).data('hover'));
+    const NewWord = $(this).data('hover');
+    $(this).text($(this).data('hover')).css('color','green')
+
+    
+}, function () {
+    // 偵測滑出
+    
+    // $(this).text('ABOUT').css('color','aqua')
+
+
+    // console.log('a hover out');
+})
+    
+  </script>
+</body>
+
+
+
+
+
+
+
+
+</body>
+</html>
