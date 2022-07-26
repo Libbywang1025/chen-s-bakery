@@ -1,0 +1,33 @@
+:root{
+  
+
+}
+nav{
+    height: 180px;
+}
+.nav-logo{
+    width: 20%;
+    min-width:100px;
+    max-width: 200px;
+}
+.nav-links a{
+text-decoration: none;
+color: #3C9B9B;
+}
+.nav-links a:hover{
+    color: #097373;
+    border-bottom: 1px solid #097373;
+}
+.logo-wrap img{
+    margin: 0 auto;
+}
+.icons-group{
+    right:20%;
+    top: 40%;
+}
+.icons-group i{
+    /* border: 1px solid red; */
+    color: #3C9B9B;
+
+
+}
