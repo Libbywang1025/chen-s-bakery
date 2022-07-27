@@ -102,7 +102,19 @@ input {
 }
 
 /* ABOUT */
-.about-title {
+
+.orange{
+    color: #D95F43;
+}
+.about-title{
+    text-align: center;
+    font-size: 16vw;
+    color: #097373;
+    font-weight: 700;
+    letter-spacing: .48rem;
+}
+
+/* .about-title {
     color: #097373;
 }
 
@@ -137,7 +149,7 @@ input {
 }
 
 .text-title h5 {
-    /* font-size: 18px; */
+    font-size: 18px;
     font-weight: 600;
     color: #097373;
     line-height: 1.5;
@@ -147,7 +159,7 @@ input {
     color: #064747;
     font-size: 1em;
     font-weight: 500;
-}
+} */
 
 
 /* Ken */
