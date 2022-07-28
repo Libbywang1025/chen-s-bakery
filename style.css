@@ -1,12 +1,82 @@
 * {
-    /* font-family: 'Kanit', sans-serif;  */
+   
 }
 
+/* 漢堡選單 */
+#menu_control{
+    position: absolute;
+    z-index: -2;
+    opacity: 0;
+  }
+  .header{
+    height: 100px;
+    background-color:  #ffffff;;
+    position: relative;
+  }
+  .mb_logo{
+     margin: 0 auto;
+     width: 130px; 
+  }
+  .mb_logo img{
+    width: 100%;
+  }
+  .menu_btn{
+    width: 40px;
+    height: 40px;
+    /* background-color:rgb(255, 255, 255); */
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+  }
+  .menu_btn span{
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    display: block;
+    overflow: hidden;
+  }
+  .menu_btn::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 2px;
+    width: 36px;
+    background-color: #aaa;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 8px 0px #aaa,
+    0px -8px 0px #aaa;
+  }
+  .mb_nav{
+    width: 30%;
+    height: 100vh;
+    background-color: #3c9b9b;
+    box-shadow: -50px 0 50px -50px rgba(0, 0, 0, 0.672);
+    position: absolute;
+    top: 100px;
+    right: -200%;
+    transition: .5s;
+  }
+  .mb_nav a{
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    /* border-bottom: 1px solid aqua; */
+  }
+  #menu_control:checked ~ .header nav{
+    right: 0;
+  }
+
+/* 桌機nav */
 nav {
     background-color: #fff;
     width: 100%;
     height: 100px;
     position: fixed;
+    top:0;
     z-index: 999;
 }
 
@@ -15,8 +85,9 @@ nav {
     /* width: 20%; */
     min-width: 130px;
     max-width: 150px;
-   
+
 }
+
 .nav-links a {
     text-decoration: none;
     color: #3C9B9B;
@@ -34,18 +105,19 @@ nav {
 }
 
 .icons-group {
-    /* justify-content: end; */
-    right: 20%;
-    top: 40%;
+    right: 10%;
+    top: 50px;
 }
 
 .icons-group i {
-    color: #3C9B9B;
+    /* color: #3C9B9B; */
     font-size: 30px;
     transform: translateY(-50%);
 }
-
-.menu {
+.fb-icon,.ig-icon,.line-icon{
+font-size: 0;
+}
+/* .menu {
     width: 80px;
     text-align: center;
 }
@@ -76,11 +148,12 @@ label {
 display:block;
 } */
 
-input {
+/* input {
     display: none;
-}
+} */
 
 
+/* 輪播牆 照片會爆 */
 .bannerbox {
     width: 100%;
     height: 100vh;
@@ -88,6 +161,7 @@ input {
 
 #carouselExampleIndicators {
     height: 100%;
+
 }
 
 .carousel-inner,
@@ -95,75 +169,159 @@ input {
 .carousel-item img {
     width: 100%;
     height: 100%;
-}
-
-.carousel-item img {
     object-fit: cover;
 }
 
 /* ABOUT */
+.about {
+    background-color: #87C8C8;
+}
 
-.orange{
+.orange {
     color: #D95F43;
 }
-.about-title{
-    text-align: center;
-    font-size: 16vw;
-    color: #097373;
-    font-weight: 700;
-    letter-spacing: .48rem;
-}
 
-/* .about-title {
+.about-title {
+    text-align: center;
     color: #097373;
+    letter-spacing: .48rem;
 }
 
 .about-title h1 {
     font-weight: 1000;
 }
 
-.about-content {
-    padding: 30px;
+@media screen and (min-width: 768px) {
+
+    .about-title {
+        position: absolute;
+        bottom: -165px;
+        left: 0;
+    }
+
+    .about-title h1 {
+        font-size: 150px;
+    }
+
+    .about-content {
+        position: relative;
+    }
+    .abouttext h4 {
+        font-size: 40px;
+    }
 }
 
-.about-title span {
-    color: #D95F43;
-}
-
-.aboutbox {
-    background-color: #87C8C8;
-}
-
-.img-wrap {
-    border: 1px solid red;
-    margin: 0 auto;
-    width: 400px;
-
-
-}
-
-.about-img {
+.chen-img-wrap {
+    /* border: 1px solid red; */
     width: 100%;
- 
+    height: 600px;
+    background: url(./images/about.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.abouttext h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #097373;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.abouttext p {
+    font-size: 15px;
+    color: #097373;
+
+}
+
+.icon1-wrap {
+    animation: toast 2s ease-out infinite;
+    bottom: 100px;
+
+}
+@keyframes toast {
+    0% , 100% {
+        transform: scale(1) rotate(30deg);
+    }
+
+    50% {
+        transform: scale(0.8)  rotate(60deg);
+    }
+
+
+}
+
+.icon2-wrap {
+right: 1200px;
+bottom: 40px;
+animation: bread 2s ease-in-out infinite;
+}
+
+@keyframes bread {
+    0% , 100% {
+        transform: scale(1) rotate(0deg) translateY(30px);
+    }
+
+    50% {
+        transform: scale(1);
+        transform: rotate(-10deg);
+    }
+
+}
+.icon3-wrap {
+    right: 700px;
+    bottom: 400px;
+    /* opacity: .5; */
   
 }
 
-.text-title h5 {
-    font-size: 18px;
-    font-weight: 600;
+
+/* BREAD */
+.bread-title {
+    text-align: center;
     color: #097373;
-    line-height: 1.5;
+    letter-spacing: .48rem;
 }
 
-.text-box p {
-    color: #064747;
-    font-size: 1em;
-    font-weight: 500;
-} */
+.bread-title h1 {
+    font-weight: 1000;
+}
+.collection{
+    color: #097373;
+    border: 1px solid #097373;
+    display:inline-flex;
+    margin: 0 auto;
+    
 
+
+}
+
+@media screen and (min-width: 768px) {
+.bread-title>h1{
+    writing-mode: vertical-lr;
+    font-size: 150px;
+
+}
+.bread-title {
+    position: absolute;
+    top: 10px;;
+    left:-147px ;
+}
+}
+
+.product-card{
+    overflow: hidden;
+    /* border-radius: 50%; */
+}
+.product-card img{
+    object-fit: cover;
+}
+
+
+
+    
 
 /* Ken */
-label.burger {
+/* label.burger {
     position: relative;
 }
 
@@ -213,6 +371,6 @@ body {
 
 .activeKen {
     transform: translateX(0);
-}
+} */
 
 /* End */
