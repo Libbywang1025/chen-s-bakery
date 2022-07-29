@@ -2,6 +2,63 @@
    
 }
 
+
+body{
+    background-color:#d4cbb2d4;
+}
+
+/* 桌機nav */
+nav {
+    background-color: #fff;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top:0;
+    z-index: 9;
+    transition:.5s ;
+}
+.hidden{
+    transform: translateY(-100px);
+}
+
+
+.nav-logo {
+    height: 100px;
+    /* width: 20%; */
+    min-width: 130px;
+    max-width: 150px;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #3C9B9B;
+    border-bottom: 1px solid transparent;
+}
+
+.link-left a:hover,
+.link-right a:hover {
+    color: #097373;
+    border-bottom: 1px solid #097373;
+}
+
+.logo-wrap img {
+    margin: 0 auto;
+}
+
+.icons-group {
+    right: 10%;
+    top: 50px;
+}
+
+.icons-group i {
+    font-size: 30px;
+    transform: translateY(-50%);
+}
+.fb-icon,.ig-icon,.line-icon{
+font-size: 0;
+}
+
 /* 漢堡選單 */
 #menu_control{
     position: absolute;
@@ -23,7 +80,6 @@
   .menu_btn{
     width: 40px;
     height: 40px;
-    /* background-color:rgb(255, 255, 255); */
     display: block;
     position: absolute;
     top: 30px;
@@ -70,53 +126,87 @@
     right: 0;
   }
 
-/* 桌機nav */
-nav {
-    background-color: #fff;
+/* scrollbar */
+.bannerbox{
+    position: relative;
+}
+.scrollbar{
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    right: auto;
+    top: auto;
+    z-index: 9999;
+    width: 80px;
+    left: calc(50% - 40px);
+}
+  .scrolltext{
+    color:#ffffff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .12rem;
+    z-index: 9999;
+    margin-bottom: 2px;
+    animation: scroll-slide 2s ease infinite; 
+  }
+  .scrollline {
+    width: 1px;
+    height: 65px;
+    left: 50%;
+    bottom: 100px;
+    right: auto;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    z-index: 9999;
+    animation: scroll-slide 2s ease infinite;
+  }
+
+  @keyframes scroll-slide {
+
+    0%{
+        transform: translateY(0);
+        /* opacity: 1; */
+    }
+    50%{
+        transform: translateY(10px);
+        /* opacity: 0; */
+    }
+    100%{
+        transform: translateY(0px);
+        /* opacity: 0; */
+    }
+    
+  }
+/* 手機板圖片需要調整 */
+.nav-link{
+    width: 130px;
+}
+  .bannerbox{
     width: 100%;
-    height: 100px;
-    position: fixed;
-    top:0;
-    z-index: 999;
-}
+    height: 100vh;
+    background: url(./images/279269663_1331033440641740_7176993009613511456_n.jpg) no-repeat;
+    background-size: cover;
+    -webkit-background-clip: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);;
+    clip-path: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  }
+  @media screen and (max-width: 768px) {
 
-.nav-logo {
-    height: 100px;
-    /* width: 20%; */
-    min-width: 130px;
-    max-width: 150px;
+    .bannerbox{
+        width: 100%;
+        height: 100vh;
+        background: url(./images/279269663_1331033440641740_7176993009613511456_n.jpg) -600px no-repeat;
+        background-size: cover;
+        -webkit-background-clip: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);;
+        clip-path: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);
+      }
 
-}
+  }
 
-.nav-links a {
-    text-decoration: none;
-    color: #3C9B9B;
-    border-bottom: 1px solid transparent;
-}
 
-.link-left a:hover,
-.link-right a:hover {
-    color: #097373;
-    border-bottom: 1px solid #097373;
-}
+  
 
-.logo-wrap img {
-    margin: 0 auto;
-}
-
-.icons-group {
-    right: 10%;
-    top: 50px;
-}
-
-.icons-group i {
-    /* color: #3C9B9B; */
-    font-size: 30px;
-    transform: translateY(-50%);
-}
-.fb-icon,.ig-icon,.line-icon{
-font-size: 0;
-}
 /* .menu {
     width: 80px;
     text-align: center;
@@ -153,28 +243,12 @@ display:block;
 } */
 
 
-/* 輪播牆 照片會爆 */
-.bannerbox {
-    width: 100%;
-    height: 100vh;
-}
-
-#carouselExampleIndicators {
-    height: 100%;
-
-}
-
-.carousel-inner,
-.carousel-item,
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 /* ABOUT */
 .about {
-    background-color: #87C8C8;
+    /* border: 1px solid red; */
+    margin-top: 72px;
+  
 }
 
 .orange {
@@ -182,6 +256,7 @@ display:block;
 }
 
 .about-title {
+    font-size: 2.5rem;
     text-align: center;
     color: #097373;
     letter-spacing: .48rem;
@@ -191,12 +266,33 @@ display:block;
     font-weight: 1000;
 }
 
-@media screen and (min-width: 768px) {
+.abouttext h4 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #3F3F3F;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.abouttext p {
+    text-align: center;
+    font-size: 14px;
+    color: #3F3F3F;
+    line-height: 1.5;
+    
+
+}
+.abouttext{
+    margin-top: 16px;
+}
+
+/* @media screen and (min-width: 768px) {
 
     .about-title {
         position: absolute;
         bottom: -165px;
-        left: 0;
+        left: -150px;
     }
 
     .about-title h1 {
@@ -209,32 +305,22 @@ display:block;
     .abouttext h4 {
         font-size: 40px;
     }
-}
+} 
+
+*/
+
 
 .chen-img-wrap {
     /* border: 1px solid red; */
-    width: 100%;
-    height: 600px;
-    background: url(./images/about.jpg) center center no-repeat;
-    background-size: cover;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
 }
 
-.abouttext h4 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #097373;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-.abouttext p {
-    font-size: 15px;
-    color: #097373;
-
-}
 
 .icon1-wrap {
     animation: toast 2s ease-out infinite;
+    left: 0;
     bottom: 100px;
 
 }
@@ -268,14 +354,25 @@ animation: bread 2s ease-in-out infinite;
 
 }
 .icon3-wrap {
-    right: 700px;
-    bottom: 400px;
+    right: 50px;
+    bottom: -600;
     /* opacity: .5; */
   
+}
+.icon4-wrap{
+    right: -50px;
+    bottom: 0;
+
 }
 
 
 /* BREAD */
+.bread{
+    /* border: 1px solid red; */
+    margin-top: 200px;
+    background-color: rgba(255, 255, 255, 0.877);
+}
+
 .bread-title {
     text-align: center;
     color: #097373;
@@ -291,23 +388,9 @@ animation: bread 2s ease-in-out infinite;
     display:inline-flex;
     margin: 0 auto;
     
-
-
 }
 
 @media screen and (min-width: 768px) {
-.bread-title>h1{
-    writing-mode: vertical-lr;
-    font-size: 150px;
-
-}
-.bread-title {
-    position: absolute;
-    top: 10px;;
-    left:-147px ;
-}
-}
-
 .product-card{
     overflow: hidden;
     /* border-radius: 50%; */
@@ -315,11 +398,41 @@ animation: bread 2s ease-in-out infinite;
 .product-card img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+}
+
+.sourdough .img-wrap{
+    width: 80%;
+    height: 500px;
+    /* border: 1px solid red; */
+    overflow: hidden;
+    background: url(./images/Rectangle\ 32.png) center center no-repeat;
+    background-size: cover;
+    opacity: .5;
+}  
 }
 
 
 
+
+
+
+
+
+
+.top{
+    color: #fff;
+    background-color:#87C8C8;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    right: 40px;
+    bottom: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
     
 
 /* Ken */

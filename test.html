@@ -83,24 +83,51 @@
       height: auto;
     }
     .container{
-      background-color: #aaa;
+      background-color: rgb(255, 255, 255);
     }
+    .content{
+      color: #097373;;
+    }
+    h4{
+      top: 0%;
+    }
+
+/* 不規則形狀首頁 css*/
+    .box{
+      width: 100%;
+      height: 100vh;
+      background: url(./images/279269663_1331033440641740_7176993009613511456_n.jpg);
+      background-size: cover;
+      -webkit-background-clip: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);;
+      clip-path: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    }
+    html,body{
+      height: 100%;
+    }
+    body{
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+  }
 
   </style>
 </head>
 <body>
 
-
-<div class="container d-flex align-items-center ">
+<div class="box"></div>
+<!-- <div class="container d-flex align-items-center position-relative ">
   <div class="img-wrap ">
     <img class=w-100 src="./images/about.jpg" alt="">
   </div>
   <div class="content ">
-    <h4 >「阜東氏號所」不僅僅是一間麵包所
+    <h4 class="position-absolute">「阜東氏號所」不僅僅是一間麵包所
       <br>
       也希望帶您們踏入南區的美好
     </h4>
-    <p >
+    <p>
       我是南區長大的囝仔，
       <br>
       對我來說南區是個舒服的地方，
@@ -119,7 +146,7 @@
     </p>
   </div>
   
-</div>
+</div> -->
 
 
   <!-- <input type="checkbox" name="" id="menu_control"> 
