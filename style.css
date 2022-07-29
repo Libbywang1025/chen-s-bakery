@@ -257,7 +257,7 @@ display:block;
 
 .about-title {
     font-size: 2.5rem;
-    text-align: center;
+    /* text-align: center; */
     color: #097373;
     letter-spacing: .48rem;
 }
@@ -267,7 +267,7 @@ display:block;
 }
 
 .abouttext h4 {
-    text-align: center;
+    /* text-align: center; */
     font-size: 16px;
     font-weight: 500;
     color: #3F3F3F;
@@ -276,13 +276,23 @@ display:block;
 }
 
 .abouttext p {
-    text-align: center;
+    /* text-align: center; */
     font-size: 14px;
     color: #3F3F3F;
     line-height: 1.5;
     
-
 }
+
+@media screen and (min-width: 768px) {
+.abouttext h4 {
+    font-size: 18px;
+}
+
+.abouttext p {
+    font-size: 16px;
+}
+}
+
 .abouttext{
     margin-top: 16px;
 }
@@ -401,21 +411,37 @@ animation: bread 2s ease-in-out infinite;
 }
 
 .sourdough .img-wrap{
-    width: 80%;
-    height: 500px;
-    /* border: 1px solid red; */
+    width: auto;
+    height: 75%;
     overflow: hidden;
-    background: url(./images/Rectangle\ 32.png) center center no-repeat;
-    background-size: cover;
-    opacity: .5;
-}  
+}
 }
 
+.sour-content{
+    width: 20%;
+    height: 100%;
+    background-color: #0000003c;
+    color: #fff;
+    left: 100px;
+}
 
+.sour-content>h3{
+    letter-spacing: 0.5rem;
 
-
-
-
+    font-weight: 800;
+}
+.sour-content .check{
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+}
+.checktext{
+    /* border: 1px solid red; */
+    font-size: 20px;
+}
+.fa-regular{
+    font-size: 0;
+}
 
 
 
