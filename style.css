@@ -428,7 +428,7 @@ text-align: center;
 }
   .sourdough .img-wrap {
     width: auto;
-    height: 75%;
+    /* height: 75%; */
     overflow: hidden;
   }
 
@@ -437,11 +437,12 @@ text-align: center;
   height: 100%;
   background-color: #0000005e;
   color: #fff;
-  left: 100px;
+  left: 200px;
 }
 
-.sour-content > h3 {
-  font-weight: 800;
+.sour-content > h2 {
+  font-size: 50px;
+  font-weight: 700;
 
 }
 .sour-content .check {
@@ -452,11 +453,58 @@ text-align: center;
 .checktext {
   font-size: 20px;
 }
+.mb-taste{
+  padding: 80px 0;
+}
+
+.mb-crisp{
+  background: url(./images/47f638e0efb3fc677963835e06c178b9.jpeg) center center no-repeat;
+  background-size: contain;
+  padding-top: 80%;
+  margin: 0 auto;
+
+}
+.mb-crisp-detail{
+  background-color: rgba(0, 0, 0, 0.42);
+  color: #FFF;
+  margin: 0 auto ;
+  padding: 25px;
+  width: 70%;
+  z-index: 2;
+  top: 40px;
+  left:40px;
+
+}
+.mb-soft-card{
+  padding-top: 100px ;
+}
+
+.mb-soft{
+  background: url(./images/47f638e0efb3fc677963835e06c178b9.jpeg) center center no-repeat;
+  background-size: contain;
+  padding-top: 80%;
+  margin: 0 auto;
+
+}
+.mb-soft-detail{
+  background-color: #43423fb9;
+  color: #FFF;
+  margin: 0 auto ;
+  padding: 25px;
+  width: 70%;
+  z-index: 2;
+  top:180px;
+  left:40px;
+
+}
 
 
 .taste{
   background-color: #fff;
-   padding:80px 0;
+
+  /* background: url(./images/bg.jpg) center center no-repeat;
+  background-size: cover; */
+  padding:80px 0;
 }
 .taste>h4{
    color: rgba(0, 0, 0, 0.8);
@@ -506,16 +554,30 @@ text-align: center;
 .bread-icon{
   position: absolute;
   top: 200px;
-  right: 180px;
+  right: 200px;
   transform: rotate(30deg);
   opacity: .5; 
+ 
 }
+@keyframes breadmove {
+  0%,
+  100% {
+    transform: scale(1) ;
+  }
+
+  50% {
+    transform: scale(0.8) ;
+  }
+}
+
+
 .bread-icon2{
   position: absolute;
   top: 10px;
- left: 180px;
-  transform: rotate(30deg);
+  left: 200px;
+  transform: rotate(15deg);
   opacity: .5; 
+  animation: breadmove 2s ease-in-out infinite;
 }
 .crisp-back{
   text-align: center;
@@ -584,7 +646,22 @@ text-align: center;
   right: 170px;
   transform: rotate(10deg);
   opacity: .5; 
+  animation: breadmove2 2s ease-in-out infinite;
 }
+
+@keyframes breadmove2 {
+  0%,
+  100% {
+    transform: translateY(20px) ;
+  }
+
+  50% {
+    transform: translateY(30px) ;
+  }
+  
+}
+
+
 .bread-icon4{
   position: absolute;
   top: 10px;
@@ -640,6 +717,13 @@ font-size: 30px;
   height: 300px;
   margin: 20px auto;
 }
+@media screen and (max-width: 768px) {
+  .footer{
+padding: 60px 0;
+  }
+
+}
+
 
 @media screen and (min-width: 768px) {
   .footer{
