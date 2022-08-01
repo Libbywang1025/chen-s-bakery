@@ -1,10 +1,16 @@
 * {
-  font-family: 'Playfair Display SC', serif;
+  font-family: 'Noto Serif TC', serif;
+}
+html{
+  scroll-behavior: smooth;
 }
 
 body {
-  /* background-color: #87c8c8; */
   background-color: #fff;
+
+}
+h1{
+  font-weight: 900;
 }
 
 /* 桌機nav */
@@ -23,7 +29,7 @@ nav {
 
 .nav-logo {
   height: 100px;
-  /* width: 20%; */
+  width: 20%;
   min-width: 130px;
   max-width: 150px;
 }
@@ -60,6 +66,9 @@ nav {
 }
 
 /* 漢堡選單 */
+.mb-ham{
+  overflow: hidden;
+}
 #menu_control {
   position: absolute;
   z-index: -2;
@@ -113,6 +122,8 @@ nav {
   top: 100px;
   right: -200%;
   transition: 0.5s;
+  z-index: 500;
+
 }
 .mb_nav a {
   display: block;
@@ -128,6 +139,7 @@ nav {
 /* scrollbar */
 .bannerbox {
   position: relative;
+  margin-bottom: 80px;
 }
 .scrollbar {
   display: block;
@@ -182,17 +194,18 @@ nav {
 }
 .bannerbox {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
+  height: calc(100vh - 30px);
   background: url(./images/IMG_1256.JPG)
     no-repeat;
   background-size: cover;
-  /* -webkit-background-clip: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);
-  clip-path: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%); */
+  -webkit-background-clip: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  clip-path: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);
 }
 @media screen and (max-width: 768px) {
   .bannerbox {
     width: 100%;
-    height: 100vh;
+    height:calc(100vh - 150px);
     background: url(./images/IMG_1256.JPG) -300px 
       no-repeat;
     background-size: cover;
@@ -202,10 +215,21 @@ nav {
 }
 
 /* ABOUT */
-.about{
+
+
+.aboutbox{
   background-color: #87c8c8;
+  padding: 80px 0;
 }
-.orange {
+
+@media screen and (max-width: 768px) {
+  .aboutbox{
+    padding: 0;
+  }
+}
+
+
+.orange{
   color: rgba(217, 95, 67, 1);
 }
 .about-title {
@@ -223,37 +247,38 @@ nav {
 }
 
 .abouttext p {
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   line-height: 1.5;
 }
+
 
 @media screen and (max-width: 376px) {
   .abouttext {
     text-align: center;
   }
+
+
 }
 @media screen and (min-width: 768px) {
   .about-title {
     position: absolute;
-    left: 400px;
-    top: 305px;
+    right: -200px;
+    bottom: -140px;
   }
   .about-title h1 {
-    font-size: 160px;
+    font-size: 100px;
     line-height: 120%;
     font-weight: 900;
   }
 
-  .about-content {
-    position: relative;
-  }
+
   .abouttext h4 {
-    font-size: 20px;
+    font-size: 16px;
     padding: 22px 0px;
   }
   .abouttext p {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -303,8 +328,14 @@ nav {
 /* BREAD */
 .bread {
   background-color: rgba(255, 255, 255);
-  /* height: 600px; */
-  /* padding: 80px 0; */
+  padding: 80px 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .bread {
+    padding: 0;
+  }
 }
 
 .bread-title {
@@ -329,7 +360,7 @@ nav {
   }
   .bread-title h1 {
     writing-mode: vertical-rl;
-    font-size: 160px;
+    font-size: 100px;
     line-height: 120%;
   }
 
@@ -380,7 +411,7 @@ nav {
 .mb-sourdough .title{
 font-size: 20px;
 color:#097373;
-font-weight:800px;
+font-weight:bold;
 text-align: center;
 }
 
@@ -410,7 +441,6 @@ text-align: center;
 }
 
 .sour-content > h3 {
-  letter-spacing: 0.5rem;
   font-weight: 800;
 
 }
@@ -425,8 +455,7 @@ text-align: center;
 
 
 .taste{
-  /* border: 1px solid red; */
-    background-color: #fff;
+  background-color: #fff;
    padding:80px 0;
 }
 .taste>h4{
@@ -447,7 +476,7 @@ text-align: center;
   border-radius:5%;
   width: 250px;
   height: 350px;
-  box-shadow: 2px 2px 10px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.702);
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
@@ -485,7 +514,7 @@ text-align: center;
   position: absolute;
   top: 10px;
  left: 180px;
-  /* transform: rotate(30deg); */
+  transform: rotate(30deg);
   opacity: .5; 
 }
 .crisp-back{
@@ -501,14 +530,20 @@ text-align: center;
 
 
 .crisp-back h5, .soft-back h5{
-  border-bottom:2px solid #fff ;
+  /* border-bottom:2px solid #fff ; */
+  font-weight: bold;
+}
+.crisp-back p, .soft-back p{
+  font-weight: lighter;
+  /* font-size: 16px; */
+
 }
 .crisp-back span{
-  color: #87c8c8;
+  border-bottom:1px solid #fff ;
 }
 
-
-/* .crisp-card-box :hover{
+/* hover位移 */
+/* .crisp-card :hover{
   background-color:#3c9b9b;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.357);
   transform: translateY(-20px);
@@ -520,7 +555,7 @@ text-align: center;
   border-radius:5%;
   width: 250px;
   height: 350px;
-  box-shadow: 2px 2px 10px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.702);
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
@@ -571,12 +606,12 @@ text-align: center;
 .soft-card:hover{
   transform: rotateY(180deg);
 }
-
- footer{
+.footer{
   background-color: #87c8c8;
   width: 100%;
-  /* height: 200px; */
+
 }
+
 .Copyright{
   color: #fff;
   text-align: center;
@@ -599,15 +634,27 @@ text-align: center;
 }
 .footer-icons i{
 color: #fff;
-font-size: 20px;
+font-size: 30px;
+}
+.map {
+  height: 300px;
+  margin: 20px auto;
 }
 
 @media screen and (min-width: 768px) {
+  .footer{
+    position: relative;
+  }
+
   .footer-title h1{
     color: rgba(9, 115, 115, 1);
     font-size: 100px;
     line-height: 120%;
     font-weight: 900;
+    position: absolute;
+    left: 10px;
+    top: -70px;
+
   }
 
 }
@@ -616,9 +663,9 @@ font-size: 20px;
 
 .top {
   color: #fff;
-  background-color: #87c8c8;
-  width: 80px;
-  height: 80px;
+  background-color: #097373;
+  width: 50px;
+  height: 50px;
   position: fixed;
   right: 40px;
   bottom: 30px;
