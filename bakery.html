@@ -605,23 +605,35 @@
     })
 
     // 手機
+    // $(window).scroll(function () {
+    //   let scrollNow = $(window).scrollTop();
+
+    //   if (scrollNow > lastScroll) {
+    //     $('.mb-ham').addClass('hidden')
+    //   }
+    //   else {
+    //     $('.mb-ham').removeClass('hidden')
+    //   }
+    //   lastScroll = scrollNow;
+    // })
+
+
+
 
     $(window).scroll(function () {
-      let scrollNow = $(window).scrollTop();
-
-
-      if (scrollNow > lastScroll) {
-        $('.mb-ham').addClass('hidden')
-
+      if ($(window).scrollTop() >= ($('.aboutbox').offset().top - $(window).height() * 1 / 2)) {
+        $('.about-content ').css({
+          transform: 'translateY(0px)',
+          opacity: 1,
+        })
       }
       else {
-        $('.mb-ham').removeClass('hidden')
+        $('.about-content').css({
+          transform: 'translateY(50px)',
+          opacity: 0,
+        })
       }
-
-      lastScroll = scrollNow;
-
     })
-
 
 
     // top返回首頁
@@ -631,7 +643,7 @@
       $('html, body').animate({ scrollTop: 0 }, 2)
     })
 
-
+// top最後才出現
     $(window).scroll(function () {
       if ($(window).scrollTop() >= ($('.footer').offset().top - $(window).height() * 1 / 2)) {
         $('.top').css({
