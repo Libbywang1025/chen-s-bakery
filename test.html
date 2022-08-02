@@ -109,17 +109,17 @@ nav {
   box-shadow: 0px 8px 0px #aaa, 0px -8px 0px #aaa;
 }
 .mb_nav {
-  width: 30%;
+  width: 100px;
   height: 100vh;
   background-color: #3c9b9b;
   box-shadow: -50px 0 50px -50px rgba(0, 0, 0, 0.672);
   position: absolute;
-  /* top: 100px;
-  right: -200%; */
+  top: 100px;
+  right: 0px;
   transition: 0.5s;
   /* z-index: 100; */
-  transform-origin: 0% 0%;
-  transform: translate((-1000%,0));
+  /* transform-origin: 0% 0%; */
+  transform: translatex(1000%);
   /* transition: transform 0.5s cubic-bezier(0.077, 0.2, 0.05, 1.0); */
 
 }
@@ -130,8 +130,13 @@ nav {
   padding: 10px 20px;
 
 }
-#menu_control:checked ~ .header .mb-nav {
+#menu_control:checked ~ .header.mb-nav {
   right: 0;
+}
+
+*{
+  outline: 1px solid red;
+
 }
 
 </style>
@@ -141,7 +146,7 @@ nav {
 <body>
   <nav>
     <div class="container-fluid">
-      <div class="row nav-links d-flex justify-content-center position-relative ">
+      <div class="row m-0 nav-links d-flex justify-content-center position-relative ">
         <div class="link-left d-none d-md-flex align-items-center">
           <div class="nav-link">
             <a class="menu mx-md-3" href="#home" data-hover="首頁" data-leave="HOME">HOME</a>
@@ -162,7 +167,6 @@ nav {
             <a class="menu mx-md-3" href="#access" data-hover="阜東所在" data-leave="ACCESS">ACCESS</a>
           </div>
         </div>
-       
 
         <div class="icons-group d-none d-lg-flex align-items-center position-absolute">
           <a class="fb-icon mr-3 text-decoration-none" href="https://www.facebook.com/chens.dailybaker">
@@ -175,20 +179,19 @@ nav {
             <i class="fa-brands fa-line"></i>
           </a>
         </div>
-      </div>
 
-
-      <div class="mb-ham">
-        <input type="checkbox" name="" id="menu_control">
-        <div class="header d-flex justify-content-center align-items-center">
-          <label for="menu_control" class="menu_btn">
-            <span>選單</span>
-          </label>
-          <div class="mb_nav">
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#bread">BREAD</a>
-            <a href="#access">ACCESS</a>
+        <div id="mb-ham" class="mb-ham">
+          <input type="checkbox" name="" id="menu_control">
+          <div class="header d-flex justify-content-center align-items-center">
+            <label for="menu_control" class="menu_btn">
+              <span>選單</span>
+            </label>
+            <div class="mb_nav">
+              <a id="clickhome" href="#home">HOME</a>
+              <a id="clickabout" href="#about">ABOUT</a>
+              <a id="clickbread" href="#bread">BREAD</a>
+              <a id="clickaccess" href="#access">ACCESS</a>
+            </div>
           </div>
         </div>
       </div>
@@ -203,63 +206,7 @@ nav {
   <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
   <script>
-    $('.menu').mouseenter(function () {
-      $(this).text($(this).data('hover'))
-    })
-    $('.menu').mouseleave(function () {
-      $(this).text($(this).data('leave'))
-    })
-
-    $('#product1 ').mouseenter(function () {
-      $('#product1').attr({
-        src: './images/119048420_2959543340817128_1281857867645675912_n.jpg'
-      })
-    })
-    $('#product1').mouseleave(function () {
-      $('#product1').attr({
-        src: './images/bread.jpg'
-      })
-    })
-
-
-    $('#product2').mouseenter(function () {
-      $('#product2').attr({
-        src: './images/cinnamonroll-2.jpg'
-      })
-    })
-    $('#product2').mouseleave(function () {
-      $('#product2').attr({
-        src: './images/cinnamonroll.jpg'
-      })
-    })
-
-
-    $('#product3').mouseenter(function () {
-      $('#product3').attr({
-        src: './images/toast-3.jpg'
-      })
-    })
-    $('#product3').mouseleave(function () {
-      $('#product3').attr({
-        src: './images/e8cce2da9d8bc314505e0a88cd44e440.jpg'
-      })
-    })
-
-    $('#product4').mouseenter(function () {
-      $('#product4').attr({
-        src: './images/bagle.jpg'
-      })
-    })
-    $('#product4').mouseleave(function () {
-      $('#product4').attr({
-        src: './images/118255319_2668445943403730_3773425379149881032_n.jpg'
-      })
-    })
-
-
-
-
-
+   
     // 下滑收navbar 上滑出現 
     let lastScroll = 0
 
@@ -278,35 +225,31 @@ nav {
 
 
 
-    // top返回首頁
-    $('.top').click(function () {
-      // html 適用在 FireFox, Chrome
-      // body 適用在 Safari
-      $('html, body').animate({ scrollTop: 0 }, 2)
-    })
+    // $('.menu_btn').click(function(){
+    //   $('.mb_nav').toggleClass('show')
+    // })
 
+    // $('#clickhome').click(function(){
+    //   $('.mb_nav').removeClass('show')
+    // })
+    // $('#clickabout').click(function(){
+    //   $('.mb_nav').removeClass('show')
+    // })
+    // $('#clickbread').click(function(){
+    //   $('.mb_nav').removeClass('show')
+    // })
+    // $('#clickaccess').click(function(){
+    //   $('.mb_nav').removeClass('show')
+    // })
 
-    $(window).scroll(function () {
-      if ($(window).scrollTop() >= ($('.footer').offset().top - $(window).height() * 1 / 2)) {
-        $('.top').css({
-          transform: 'translateY(0px)',
-          opacity: 1,
-        })
-      }
-      else {
-        $('.top').css({
-          transform: 'translateY(50px)',
-          opacity: 0,
-        })
-      }
-    })
 
 
 
     $('#menu_control').click(function () {
-      $('.mb_nav').css('transform','translate(0%,0)')
-      if($('mb_nav').css('transform') ==('matrix(1,0,0,1,0,0)')){
-        $('mb_nav').css('transform','translate(-1000%,0)')
+      $('.mb_nav').css('transform','translateX(0%)')
+      console.log($('.mb_nav').css('transform'));
+      if($('.mb_nav').css('transform') ==('matrix(1, 0, 0, 1, 0, 0)')){
+        $('.mb_nav').css('transform','translateX(1000%)')
       }
     })
 

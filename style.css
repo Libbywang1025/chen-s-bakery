@@ -30,7 +30,7 @@ nav {
 .nav-logo {
   height: 100px;
   width: 20%;
-  min-width: 130px;
+  min-width: 110px;
   max-width: 150px;
 }
 
@@ -65,34 +65,20 @@ nav {
   font-size: 0;
 }
 
-/* 漢堡選單 */
-.mb-ham{
-  overflow: hidden;
-}
+
 #menu_control {
   position: absolute;
   z-index: -2;
   opacity: 0;
 }
-.header {
-  height: 100px;
-  background-color: #ffffff;
-  position: relative;
-}
-.mb_logo {
-  margin: 0 auto;
-  width: 130px;
-}
-.mb_logo img {
-  width: 100%;
-}
+
 .menu_btn {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   display: block;
   position: absolute;
-  top: 30px;
-  right: 10px;
+  top: 40px;
+  right: 30px;
 }
 .menu_btn span {
   opacity: 0;
@@ -114,15 +100,18 @@ nav {
   box-shadow: 0px 8px 0px #aaa, 0px -8px 0px #aaa;
 }
 .mb_nav {
-  width: 30%;
+  width: 100px;
   height: 100vh;
   background-color: #3c9b9b;
   box-shadow: -50px 0 50px -50px rgba(0, 0, 0, 0.672);
   position: absolute;
   top: 100px;
-  right: -200%;
+  right: -20px;
   transition: 0.5s;
-  z-index: 500;
+  /* z-index: 100; */
+  /* transform-origin: 0% 0%; */
+  transform: translatex(1000%);
+  /* transition: transform 0.5s cubic-bezier(0.077, 0.2, 0.05, 1.0); */
 
 }
 .mb_nav a {
@@ -194,9 +183,9 @@ nav {
 }
 .bannerbox {
   width: 100%;
-  /* height: 100vh; */
+  height: 100vh;
   height: calc(100vh - 30px);
-  background: url(./images/IMG_1256.JPG)
+  background: url(./images/home.png)
     no-repeat;
   background-size: cover;
   -webkit-background-clip: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);
@@ -205,8 +194,8 @@ nav {
 @media screen and (max-width: 768px) {
   .bannerbox {
     width: 100%;
-    height:calc(100vh - 150px);
-    background: url(./images/IMG_1256.JPG) -300px 
+    height:100vh;
+    background: url(./images/home.png) -300px 
       no-repeat;
     background-size: cover;
     -webkit-background-clip: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);
@@ -215,11 +204,12 @@ nav {
 }
 
 /* ABOUT */
-
-
 .aboutbox{
   background-color: #87c8c8;
   padding: 80px 0;
+  /* transition: .5s; */
+}
+.about-content{
   transition: .5s;
 }
 
@@ -246,6 +236,10 @@ nav {
   color: #fff;
   line-height: 1.5;
 }
+.abouttext i{
+  color: #D95F43;
+  font-size: 20px;
+}
 
 .abouttext p {
   font-size: 16px;
@@ -262,9 +256,14 @@ nav {
 
 }
 @media screen and (min-width: 768px) {
+  .abouttext i{
+    color: #D95F43;
+    /* font-size: 20px; */
+  }
+  
   .about-title {
     position: absolute;
-    right: -200px;
+    right: -20px;
     bottom: -140px;
   }
   .about-title h1 {
@@ -275,7 +274,7 @@ nav {
 
 
   .abouttext h4 {
-    font-size: 16px;
+    font-size: 18px;
     padding: 22px 0px;
   }
   .abouttext p {
@@ -312,8 +311,7 @@ nav {
   }
 
   50% {
-    transform: scale(1);
-    transform: rotate(-10deg);
+    transform: scale(1) rotate(-10deg);
   }
 }
 .icon3-wrap {
@@ -344,6 +342,7 @@ nav {
   color: rgba(9, 115, 115, 1);
   letter-spacing: 0.48rem;
   font-weight: 900;
+  transition: .5s;
 }
 
 .collection {
@@ -378,9 +377,14 @@ nav {
 
   /* 酸種麵包好處 */
 /* 手機 */
+.sour-text-box  p{
+  font-size: 16px;
+  
+}
 .mb-sourdough-box{
-  background-color: #fff;
   position: relative;
+  background-color:#87c8c8;
+  transition: .5s;
 }
 .mb-sourdough-img-wrap{
   width: 200px;
@@ -390,17 +394,16 @@ nav {
   position: absolute;
   left: 90px;
   bottom:-40px;
-  /* border: 1px solid red; */
+
 }
 .mb-sourdough-img-wrap img{
-  /* height: 100%; */
   object-fit: cover;
 }
 
 .mb-sourdough{
-  background-color:#3c9b9bb1;
-  width: 80%;
-  height:350px;
+
+  /* width: 80%; */
+  /* height:300px; */
   margin: 0 auto;
   
 }
@@ -410,10 +413,28 @@ nav {
   font-size: 0;
 }
 .mb-sourdough .title{
-font-size: 20px;
+/* font-size: 20px; */
 color:#097373;
 font-weight:bold;
 text-align: center;
+}
+.mb-sourdough .icon-wrap1{
+  width: 30px;
+  transform: rotate(-30deg);
+  opacity: .5;
+  position: absolute;
+  left: 30px;
+  bottom: 100px;
+
+}
+
+.mb-sourdough .icon-wrap2{
+  width: 40px;
+  transform: rotate(30deg);
+  opacity: .5;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 
 .sour-text-box{
@@ -425,6 +446,7 @@ text-align: center;
 /* 桌機 */
 .sourdough{
   margin: 80px 0;
+  transition: .5s;
 
 }
   .sourdough .img-wrap {
@@ -434,16 +456,20 @@ text-align: center;
   }
 
 .sour-content {
-  width: 20%;
+  width: 25%;
   height: 100%;
   background-color: #0000005e;
   color: #fff;
   left: 200px;
 }
 
-.sour-content > h2 {
-  font-size: 50px;
+.sourdough  > h3 {
+  font-size: 40px;
   font-weight: 700;
+  color: #FFF;
+  z-index: 99;
+  left:250px;
+  top: 30px;
 
 }
 .sour-content .check {
@@ -454,58 +480,78 @@ text-align: center;
 .checktext {
   font-size: 20px;
 }
-.mb-taste{
+/* .mb-taste{
   padding: 80px 0;
+} */
+.mb-crisp-card{
+  margin: 0 auto;
+  text-align: center;
+  transition: .5s;
+}
+.mb-crisp-card h4{
+  background-color: #3c9b9b;
+  color: #FFF;
+  display: inline;
+  padding: 0 10px;
+}
+.mb-soft-card{
+  margin: 0 auto;
+  text-align: center;
+  transition: .5s;
+
+}
+.mb-soft-card h4{
+  background-color: #D95F43;
+  color: #FFF;
+  display: inline;
+  padding: 0 10px;
 }
 
 .mb-crisp{
-  background: url(./images/47f638e0efb3fc677963835e06c178b9.jpeg) center center no-repeat;
-  background-size: contain;
+  width: 100%;
+  background: url(./images/e1acc1e18f4c5c05ed1f63195dfa2216.jpeg) center center no-repeat;
+  /* background-size: contain; */
   padding-top: 80%;
   margin: 0 auto;
 
 }
 .mb-crisp-detail{
-  background-color: rgba(0, 0, 0, 0.42);
+  background-color:#3c9b9be2;
   color: #FFF;
   margin: 0 auto ;
   padding: 25px;
   width: 70%;
-  z-index: 2;
-  top: 40px;
-  left:40px;
+  /* z-index: 2; */
+  top: 120px;
+  left: 56px;
 
 }
 .mb-soft-card{
-  padding-top: 100px ;
+  padding-top: 200px;
 }
 
 .mb-soft{
-  background: url(./images/47f638e0efb3fc677963835e06c178b9.jpeg) center center no-repeat;
-  background-size: contain;
+  background: url(./images/taste-soft-bg.png) center center /cover no-repeat;
+  /* background-size: contain; */
   padding-top: 80%;
-  margin: 0 auto;
+  margin: 16px auto;
 
 }
 .mb-soft-detail{
-  background-color: #43423fb9;
+  background-color: #d95f43ed;
   color: #FFF;
   margin: 0 auto ;
   padding: 25px;
   width: 70%;
-  z-index: 2;
-  top:180px;
-  left:40px;
+  top: 190px;
+  left: 56px;
 
 }
 
 
 .taste{
-  background-color: #fff;
-
-  /* background: url(./images/bg.jpg) center center no-repeat;
-  background-size: cover; */
-  padding:80px 0;
+ transition: .5s;
+  padding:20px 0 80px;
 }
 .taste>h4{
    color: rgba(0, 0, 0, 0.8);
@@ -518,7 +564,9 @@ text-align: center;
     margin: 0 auto;
     padding: 8px 20px;
 }
-
+.hover-box{
+padding: 30px;
+}
 .crisp-card{
   background-color:#097373;
   color: #fff;
@@ -540,10 +588,11 @@ text-align: center;
   backface-visibility: hidden;
 
 }
-
-.crisp-card:hover{
+.hover-box1:hover .crisp-card{
   transform: rotateY(180deg);
 }
+
+
 
 .crisp-front{
   width: 100%;
@@ -587,7 +636,6 @@ text-align: center;
   align-items: center;
   transform: rotateY(180deg);
   justify-content: center;
-
 
 }
 
@@ -681,10 +729,38 @@ text-align: center;
   transform: rotateY(180deg);
 
 }
-.soft-card:hover{
+
+.hover-box2:hover .soft-card{
   transform: rotateY(180deg);
 }
+
+
+.soft-card:hover .soft-back {
+  animation: fadeIn .3s;
+  animation-delay: .2s;
+  animation-fill-mode: backwards;
+}
+.crisp-card:hover .crisp-back {
+  animation: fadeIn .3s;
+  animation-delay: .2s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) rotateY(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateY(180deg)
+  }
+}
+
+
 .footer{
+
+  margin: 80px 0 0;
   background-color: #87c8c8;
   width: 100%;
 
@@ -720,7 +796,7 @@ font-size: 30px;
 }
 @media screen and (max-width: 768px) {
   .footer{
-padding: 60px 0;
+padding: 50px 0;
   }
 
 }
@@ -747,10 +823,8 @@ padding: 60px 0;
 
 
 .top {
-  color: #fff;
-  background-color: #097373;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   position: fixed;
   right: 40px;
   bottom: 30px;
@@ -759,59 +833,5 @@ padding: 60px 0;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 999;
 }
-
-/* Ken */
-/* label.burger {
-    position: relative;
-}
-
-.burger-ken {
-    width: 15px;
-    height: 3px;
-    background-color: #097373;
-    z-index: 10000;
-}
-
-.burger-ken::before {
-    content: '';
-    display: block;
-    width: 15px;
-    height: 3px;
-    background-color: #097373;
-    position: absolute;
-    top: -5px;
-}
-
-.burger-ken::after {
-    content: '';
-    display: block;
-    width: 15px;
-    height: 3px;
-    background-color: #097373;
-    position: absolute;
-    top: 5px;
-}
-
-body {
-    position: relative;
-}
-
-.menubuttonKen {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 400px;
-    background-color: #09737396;
-    position: absolute;
-    top: 0;
-    z-index: 9999;
-    transform: translateX(-2000px);
-    transition: all 1s;
-}
-
-.activeKen {
-    transform: translateX(0);
-} */
-
-/* End */
