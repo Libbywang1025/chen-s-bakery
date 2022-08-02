@@ -352,6 +352,14 @@ nav {
   margin: 0 auto;
   padding: 8px 20px;
 }
+@media screen and (max-width: 768px) {
+
+  .collection , .enjoy{
+    font-size: medium;
+  }
+}
+
+
 
 @media screen and (min-width: 768px) {
 
@@ -469,7 +477,7 @@ text-align: center;
   color: #FFF;
   z-index: 99;
   left:250px;
-  top: 30px;
+  top: 50px;
 
 }
 .sour-content .check {
@@ -488,6 +496,23 @@ text-align: center;
   text-align: center;
   transition: .5s;
 }
+.mb-crisp-card .img-wrap{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 10px;
+  bottom: 10px;
+  animation: oven 2s .5s ease-in-out;
+  transition: .5s;
+}
+@keyframes oven {
+  0%{ transform: translateX(100px);
+
+  }
+  100%{
+    transform: translateX(0px)
+  }
+}
 .mb-crisp-card h4{
   background-color: #3c9b9b;
   color: #FFF;
@@ -498,7 +523,24 @@ text-align: center;
   margin: 0 auto;
   text-align: center;
   transition: .5s;
-
+}
+.mb-soft-card .img-wrap{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 10px;
+  bottom: 10px;
+  animation: cooker 1s .5s ease-in-out;
+  transition: .5s;
+}
+@keyframes cooker {
+  0%,100%{
+    transform:rotate(0deg);
+  }
+  50%{
+    transform:rotate(-10deg);
+  }
+  
 }
 .mb-soft-card h4{
   background-color: #D95F43;
@@ -543,7 +585,7 @@ text-align: center;
   margin: 0 auto ;
   padding: 25px;
   width: 70%;
-  top: 190px;
+  bottom: -60px;
   left: 56px;
 
 }
@@ -639,6 +681,14 @@ padding: 30px;
 
 }
 
+.crisp-back .img-wrap{
+  width: 60px;
+  height:60px;
+  opacity: .3;
+  position: absolute;
+
+}
+
 
 .crisp-back h5, .soft-back h5{
   /* border-bottom:2px solid #fff ; */
@@ -727,7 +777,11 @@ padding: 30px;
   flex-direction: column;
   align-items: center;
   transform: rotateY(180deg);
-
+}
+.soft-back img{
+  width: 60px;
+  height:60px;
+  opacity: .5;
 }
 
 .hover-box2:hover .soft-card{
@@ -821,7 +875,6 @@ padding: 50px 0;
 }
 
 
-
 .top {
   width: 60px;
   height: 60px;
@@ -833,5 +886,5 @@ padding: 50px 0;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 999;
+  z-index: 9999;
 }
